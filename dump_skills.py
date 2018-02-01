@@ -33,7 +33,7 @@ for group in groups:
         )
         response = client.request(s)
         group_dict[skill] = response.data['name']
-    gral[group_name] = group_dict
+    gral[group_name] = [{'Category ID': group}, group_dict]
 
 with open("skills.txt", 'w') as f:
     json.dump(gral, fp=f, indent=4, sort_keys=True)
